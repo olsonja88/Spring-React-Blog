@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping()
+@RequestMapping(value = "/")
 public class HomeController {
     
-    @GetMapping()
+    @GetMapping(value = "/blog-app")
     public String accessBlogApp() {
-        return "";
+        return "forward:/blog-app/index.html";
     }
 
 }
