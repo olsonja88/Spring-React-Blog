@@ -1,12 +1,25 @@
-.main-container {
+/* .main-container {
   background-color: #333;
 }
 
-.navbar {
-  background-color: #00b7ff !important;
-  box-shadow: 0px 2px #1f1f1f;
+.offcanvas {
+  background-color: #333 !important;
 }
 
-.form {
-  margin: 10px;
+.offcanvas-header {
+  color: White !important;
 }
+
+.navbar-brand {
+  color: White !important;
+}
+
+.nav-link {
+  color: White !important;
+  padding: 10px !important;
+}
+
+.card {
+  background-color: #acacac !important;
+  box-shadow: 2px 2px #1f1f1f;
+} */

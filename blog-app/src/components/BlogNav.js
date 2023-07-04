@@ -1,32 +1,41 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import { useState } from "react";
+import { Container, Navbar, Nav, Button, Offcanvas, Form, FormControl } from 'react-bootstrap';
  
 const BlogNav = () => {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <div>
-            <Navbar>
-                <Navbar.Brand href="#home">Home</Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse id="basic-navbar-nav" className="d-flex justify-content-end">
-                    <Nav>
-                        <Nav.Link href="#home">
-                            JavaScript
-                        </Nav.Link>
-                        <Nav.Link href="#about">
-                            Data Structure
-                        </Nav.Link>
-                        <Nav.Link href="#services">
-                            Algorithm
-                        </Nav.Link>
-                        <Nav.Link href="#contact">
-                            Computer Network
-                        </Nav.Link>
-                    </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="ml-auto"  />
-                    </Form>
-                </Navbar.Collapse>
+        <div role="navigation">
+            <Navbar className="bg-primary">            
+                <Container className="fluid">
+                    <Navbar.Brand>The Web Log</Navbar.Brand>
+                    <Button variant="primary" onClick={handleShow}>
+                        Navigate
+                    </Button>
+                    <Offcanvas show={show} onHide={handleClose}>
+                        <Offcanvas.Header closeButton>
+                            <Offcanvas.Title>The Web Log</Offcanvas.Title>
+                        </Offcanvas.Header>
+                        <Offcanvas.Body>
+                            <Nav.Link href="#home">
+                                Home
+                            </Nav.Link>
+                            <Nav.Link href="#posts">
+                                Dev Posts
+                            </Nav.Link>
+                            <Form>
+                                <Form.Control type="search" placeholder="Search" aria-label="Search"></Form.Control>
+                                <Button type="submit">Search</Button>
+                            </Form>
+                        </Offcanvas.Body>
+                    </Offcanvas>
+                </Container>
             </Navbar>
         </div>
     )
