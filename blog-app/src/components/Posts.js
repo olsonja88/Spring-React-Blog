@@ -14,7 +14,7 @@ const Posts = () => {
                     <Post1 />
                 </Col>
                 <Col md={2} className="mt-4 float-right">
-                    <Card>
+                    <Card className="bg-custom1 text-light">
                         <Card.Body>
                             <Card.Title>Recent Posts</Card.Title>
                             <ul className="list-unstyled">

@@ -4,7 +4,7 @@ import Navbar from './components/BlogNav';
 
 function App() {
     return (
-        <div className="main-container">
+        <div className="main-container bg-custom2">
             <Navbar />
             <Posts />
         </div>
