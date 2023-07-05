@@ -14,14 +14,10 @@ const Posts = () => {
                     <Post1 />
                 </Col>
                 <Col md={2} className="mt-4 float-right">
-                    <Card className="bg-custom1 text-light">
+                    <Card className="bg-dark text-light">
                         <Card.Body>
                             <Card.Title>Recent Posts</Card.Title>
                             <ul className="list-unstyled">
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">Data Structure</a></li>
-                                <li><a href="#">Algorithm</a></li>
-                                <li><a href="#">Computer Network</a></li>
                             </ul>
                         </Card.Body>
                     </Card>

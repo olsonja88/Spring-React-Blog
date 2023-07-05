@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap";
  
 const Post4 = () => {
     return (
-        <Card className="bg-custom1">
+        <Card className="bg-dark">
             <Card.Img/>
             <Card.Body>
             </Card.Body>

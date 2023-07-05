@@ -1,0 +1,26 @@
+.main-container {
+  background-color: #333;
+}
+
+.navbar {
+  background-color: #00aeff;
+}
+
+.navbar-brand {
+  font-size: 2em;
+}
+
+.offcanvas-header {
+  background-color: #00aeff;
+}
+
+.offcanvas-body {
+  background-color: #333;
+}
+
+.btn {
+  background-color: #252525;
+  border: none;
+}
+
+/*# sourceMappingURL=custom_colors.css.map */
