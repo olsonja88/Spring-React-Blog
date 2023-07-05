@@ -1,4 +1,21 @@
-$primary: teal;
-$secondary: green;
+// custom.scss
 
+// Import functions
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Import variables and mixins
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Custom color map
+$custom-colors: (
+    "custom1" : #333333,
+    "custom2" : #505050
+);
+
+// Merge custom colors with theme colors
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+// Override full bootstrap import
 @import "../../node_modules/bootstrap/scss/bootstrap";
