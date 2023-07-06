@@ -1,1 +1,18 @@
 # Spring-React-Blog
+## Description
+Blog and admin page applications built with a React frontend and Spring backend.
+Built with Spring-Boot, this is an optional final project for my data structures class.
+
+## How to Run Locally
+* Must have Java 20 and latest version of Maven installed.
+1. Clone this repository into a directory.
+2. cd into the blog-app folder, and install the following dependencies via npm:
+* bootstrap
+* react-bootstrap
+* to instal type "npm i bootstrap" and "npm i react-bootstrap" in terminal.
+3. cd out to base folder and run "mvnw package" to build the projects files.
+4. run "mvnw spring-boot:run", and the front end should open in your browser at localhost:5050/blog-app
+
+## Current State 7/6/23
+Spring backend is setup and configured.
+Currently working on styling the blog frontend before setting up the admin page.
