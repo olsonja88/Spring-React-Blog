@@ -9,9 +9,12 @@ Built with Spring-Boot, this is an optional final project for my data structures
 2. cd into the blog-app folder, and install the following dependencies via npm:
 * bootstrap
 * react-bootstrap
-* to instal type "npm i bootstrap" and "npm i react-bootstrap" in terminal.
-3. cd out to base folder and run "mvnw package" to build the projects files.
-4. run "mvnw spring-boot:run", and the front end should open in your browser at localhost:5050/blog-app
+* to install type "npm i bootstrap" and "npm i react-bootstrap" in terminal.
+3. cd out and into the admin-app folder, and install the following dependencies via npm:
+* react-admin
+* ra-data-json-server
+4. cd out to base folder and run "mvnw package" to build the projects files.
+5. run "mvnw spring-boot:run", and the front end should open in your browser at localhost:8080/blog-app
 
 ## Current State 7/7/23
 Spring backend is setup to build both react apps.
