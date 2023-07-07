@@ -9,13 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>blog-project</artifactId>
+	<artifactId>spring-boot-blog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blog-project</name>
-	<description>Spring Boot project with React frontend</description>
+	<name>spring-boot-blog</name>
+	<description>Blog project for Spring Boot</description>
 	<properties>
 		<java.version>20</java.version>
 		<blogAppSrcDir>${project.basedir}/blog-app</blogAppSrcDir>
+		<adminAppSrcDir>${project.basedir}/admin-app</adminAppSrcDir>
 		<node.version>v20.2.0</node.version>
 		<npm.version>9.6.6</npm.version>
 		<frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
@@ -23,9 +24,18 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -82,6 +92,38 @@
                             <arguments>run build</arguments>
                         </configuration>
                     </execution>
+
+                    <execution>
+                        <id>install-frontend-tools-admin-app</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${adminAppSrcDir}</workingDirectory>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>npm-install-admin-app</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${adminAppSrcDir}</workingDirectory>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>build-admin-frontend</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <workingDirectory>${adminAppSrcDir}</workingDirectory>
+                            <arguments>run build</arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 
@@ -105,8 +147,25 @@
                             </resources>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>position-react-build-admin</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}/static/admin-app</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${adminAppSrcDir}/build</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
+
 		</plugins>
 	</build>
 
