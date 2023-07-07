@@ -1,8 +1,8 @@
 import { Admin, Resource } from "react-admin";
-import { dataProvider } from "./dataProvider";
-import { UserList } from "./users";
-import { PostList, PostEdit, PostCreate } from "./posts";
-import { Dashboard } from "./Dashboard";
+import { dataProvider } from "./components/dataProvider";
+import { UserList } from "./components/users";
+import { PostList, PostEdit, PostCreate } from "./components/posts";
+import { Dashboard } from "./components/Dashboard";
 import PostIcon from "@mui/icons-material/Book";
 import UserIcon from "@mui/icons-material/Group";
 
