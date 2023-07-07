@@ -1,4 +1,4 @@
-package com.example.blogproject.controller;
+package com.example.springbootblog.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,4 +13,8 @@ public class HomeController {
         return "forward:/blog-app/index.html";
     }
 
+    @GetMapping(value = "/admin-app")
+    public String accessAdminApp() {
+        return "forward:/admin-app/index.html";
+    }
 }

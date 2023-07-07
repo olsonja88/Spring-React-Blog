@@ -4,12 +4,12 @@ import Posts from './components/Posts';
 import Navbar from './components/BlogNav';
 
 function App() {
-    return (
-        <div className="main-container">
+  return (
+    <div className="main-container">
             <Navbar />
             <Posts />
         </div>
-    );
+  );
 }
 
 export default App;
