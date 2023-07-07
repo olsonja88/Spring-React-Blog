@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .main-container {
   background-color: #333;
 }
@@ -8,6 +9,21 @@
 
 .navbar-brand {
   font-size: 2em;
+}
+
+.nav-link {
+  border-radius: 5px;
+  width: after;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: #00aeff;
+}
+
+.nav-link:hover:after {
+  font: bold;
+  content: "   »";
 }
 
 .offcanvas-header {
@@ -23,4 +39,13 @@
   border: none;
 }
 
-/*# sourceMappingURL=custom_colors.css.map */
+.btn:hover {
+  background-color: #616161;
+  color: white;
+}
+
+.btn:target {
+  background-color: #00aeff;
+}
+
+/*# sourceMappingURL=custom.css.map */

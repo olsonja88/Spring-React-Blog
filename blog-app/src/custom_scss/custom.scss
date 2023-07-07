@@ -1,8 +1,10 @@
 // custom.scss
 
+// Variables
 $primary-color: #00aeff;
 $secondary-color: #333;
 $highlight-color: #252525;
+$btn-hover-color: #616161;
 
 .main-container {
     background-color: $secondary-color;
@@ -16,6 +18,21 @@ $highlight-color: #252525;
     font-size: 2em;
 }
 
+.nav-link {
+    border-radius: 5px;
+    width: after;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: $primary-color;
+}
+
+.nav-link:hover:after {
+    font: bold;
+    content: "   \00bb";
+}
+
 .offcanvas-header {
     background-color: $primary-color;
 }
@@ -26,5 +43,14 @@ $highlight-color: #252525;
 
 .btn {
     background-color: $highlight-color;
-    border: none;
+    border: none;  
+}
+
+.btn:hover {
+    background-color: $btn-hover-color;
+    color: white;
+}
+
+.btn:target {
+    background-color: $primary-color;
 }
