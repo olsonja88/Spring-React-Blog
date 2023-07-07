@@ -1,4 +1,5 @@
-import './assets/css/custom_bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
+import "./assets/css/custom.css";
 import Posts from './components/Posts';
 import Navbar from './components/BlogNav';
 

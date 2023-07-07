@@ -11,17 +11,17 @@ const BlogNav = () => {
 
     return (
         <div role="navigation">
-            <Navbar className="bg-custom1">            
+            <Navbar>            
                 <Container className="fluid">
-                    <Navbar.Brand className="text-light">The Web Log</Navbar.Brand>
-                    <Button variant="primary" onClick={handleShow}>
+                    <Navbar.Brand className="text-dark">The Web Log</Navbar.Brand>
+                    <Button onClick={handleShow}>
                         Navigate
                     </Button>
                     <Offcanvas show={show} onHide={handleClose}>
-                        <Offcanvas.Header closeButton className="bg-custom1 text-light">
+                        <Offcanvas.Header closeButton className="text-dark">
                             <Offcanvas.Title>The Web Log</Offcanvas.Title>
                         </Offcanvas.Header>
-                        <Offcanvas.Body className="bg-custom2 text-light">
+                        <Offcanvas.Body className="text-light">
                             <Nav.Link href="#home" className="p-3">
                                 Home
                             </Nav.Link>

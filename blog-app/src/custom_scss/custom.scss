@@ -1,21 +1,56 @@
 // custom.scss
 
-// Import functions
-@import "../../node_modules/bootstrap/scss/functions";
+// Variables
+$primary-color: #00aeff;
+$secondary-color: #333;
+$highlight-color: #252525;
+$btn-hover-color: #616161;
 
-// Import variables and mixins
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
+.main-container {
+    background-color: $secondary-color;
+}
 
-// Custom color map
-$custom-colors: (
-    "custom1" : #333333,
-    "custom2" : #505050
-);
+.navbar {
+    background-color: $primary-color;
+}
 
-// Merge custom colors with theme colors
-$theme-colors: map-merge($theme-colors, $custom-colors);
+.navbar-brand {
+    font-size: 2em;
+}
 
+.nav-link {
+    border-radius: 5px;
+    width: after;
+    transition: background-color 0.2s;
+}
 
-// Override full bootstrap import
-@import "../../node_modules/bootstrap/scss/bootstrap";
+.nav-link:hover {
+    background-color: $primary-color;
+}
+
+.nav-link:hover:after {
+    font: bold;
+    content: "   \00bb";
+}
+
+.offcanvas-header {
+    background-color: $primary-color;
+}
+
+.offcanvas-body {
+    background-color: $secondary-color;
+}
+
+.btn {
+    background-color: $highlight-color;
+    border: none;  
+}
+
+.btn:hover {
+    background-color: $btn-hover-color;
+    color: white;
+}
+
+.btn:target {
+    background-color: $primary-color;
+}
