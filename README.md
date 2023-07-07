@@ -13,6 +13,7 @@ Built with Spring-Boot, this is an optional final project for my data structures
 3. cd out to base folder and run "mvnw package" to build the projects files.
 4. run "mvnw spring-boot:run", and the front end should open in your browser at localhost:5050/blog-app
 
-## Current State 7/6/23
-Spring backend is setup and configured.
-Currently working on styling the blog frontend before setting up the admin page.
+## Current State 7/7/23
+Spring backend is setup to build both react apps.
+Blog and Admin frontends are setup.
+Currently working on building the Spring Boot backend and connecting it to both apps.
