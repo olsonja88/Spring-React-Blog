@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 
 @Component
 class Initializer implements CommandLineRunner {
-    
+
     private final CategoryRepository repository;
 
     public Initializer(CategoryRepository repository) {
