@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>20</java.version>
 		<blogAppSrcDir>${project.basedir}/blog-app</blogAppSrcDir>
-		<adminAppSrcDir>${project.basedir}/admin-app</adminAppSrcDir>
+        <creatorAppSrcDir>${project.basedir}/creator-app</creatorAppSrcDir>
 		<node.version>v20.2.0</node.version>
 		<npm.version>9.6.6</npm.version>
 		<frontend-maven-plugin.version>1.6</frontend-maven-plugin.version>
@@ -108,33 +108,33 @@
                     </execution>
 
                     <execution>
-                        <id>install-frontend-tools-admin-app</id>
+                        <id>install-frontend-tools-creator-app</id>
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <workingDirectory>${adminAppSrcDir}</workingDirectory>
+                            <workingDirectory>${creatorAppSrcDir}</workingDirectory>
                         </configuration>
                     </execution>
 
                     <execution>
-                        <id>npm-install-admin-app</id>
+                        <id>npm-install-creator-app</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <workingDirectory>${adminAppSrcDir}</workingDirectory>
+                            <workingDirectory>${creatorAppSrcDir}</workingDirectory>
                             <arguments>install</arguments>
                         </configuration>
                     </execution>
 
                     <execution>
-                        <id>build-admin-frontend</id>
+                        <id>build-creator-app</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <workingDirectory>${adminAppSrcDir}</workingDirectory>
+                            <workingDirectory>${creatorAppSrcDir}</workingDirectory>
                             <arguments>run build</arguments>
                         </configuration>
                     </execution>
@@ -162,16 +162,16 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>position-react-build-admin</id>
+                        <id>position-react-build-creator</id>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <phase>prepare-package</phase>
                         <configuration>
-                            <outputDirectory>${project.build.outputDirectory}/static/admin-app</outputDirectory>
+                            <outputDirectory>${project.build.outputDirectory}/static/creator-app</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${adminAppSrcDir}/build</directory>
+                                    <directory>${creatorAppSrcDir}/build</directory>
                                     <filtering>false</filtering>
                                 </resource>
                             </resources>
