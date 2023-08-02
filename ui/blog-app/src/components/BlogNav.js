@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { Container, Navbar, Nav, Button, Offcanvas, Form } from 'react-bootstrap';
  
 const BlogNav = () => {
@@ -22,12 +23,8 @@ const BlogNav = () => {
                             <Offcanvas.Title>The Web Log</Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body className="text-light">
-                            <Nav.Link href="#home" className="p-3">
-                                Home
-                            </Nav.Link>
-                            <Nav.Link href="#posts" className="p-3">
-                                Categories
-                            </Nav.Link>
+                            <Link className="nav-link" tag={Link} to="/">Home</Link>
+                            <Link className="nav-link" tag={Link} to="/categories">Manage Categories</Link>
                             <Form className="p-3">
                                 <Form.Control type="search" placeholder="Search" aria-label="Search" className="mb-3"></Form.Control>
                                 <Button type="submit">Search</Button>

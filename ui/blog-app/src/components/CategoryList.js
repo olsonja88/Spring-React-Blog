@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstap';
-import AppNavbar from './AppNavbar';
+import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import BlogNav from './BlogNav';
 import { Link } from 'react-router-dom';
 
 const CategoryList = () => {
@@ -11,7 +11,7 @@ const CategoryList = () => {
     useEffect(() => {
         setLoading(true);
 
-        fetch(/api/categories)
+        fetch('/api/categories')
             .then(response => response.json())
             .then(data => {
                 setCategories(data);
@@ -39,7 +39,7 @@ const CategoryList = () => {
     const categoryList = categories.map(category => {
         return <tr key={category.id}>
             <td style={{whiteSpace: 'nowrap'}}>{category.name}</td>
-            <td>{category.posts.map(event => {
+            <td>{category.posts.map(post => {
                 return <div key={post.id}>{new Intl.DateTimeFormat('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -48,7 +48,7 @@ const CategoryList = () => {
             })}</td>
             <td>
                 <ButtonGroup>
-                    <Button size="sm" color="primary" tag={Link} to={"/categories/" + category.id}>Edit</Button>
+                    <Link className="btn" size="sm" color="primary" to={"/categories/" + category.id}>Edit</Link>
                     <Button size="sm" color="danger" onClick={() => remove(category.id)}>Delete</Button>
                 </ButtonGroup>
             </td>
@@ -57,10 +57,10 @@ const CategoryList = () => {
 
     return (
         <div>
-            <AppNavbar/>
+            <BlogNav/>
             <Container fluid>
                 <div className="float-end">
-                    <Button color="success" tag={Link} to="/categories/new">Add Category</Button>
+                    <Link className="btn" color="success" to="/categories/new">Add Category</Link>
                 </div>
                 <h3>My Category</h3>
                 <Table className="mt-4">
@@ -72,10 +72,12 @@ const CategoryList = () => {
                     </tr>
                     </thead>
                     <tbody>
-                        {CategoryList}
+                        {categoryList}
                     </tbody>
                 </Table>
             </Container>
         </div>
     );
 };
+
+export default CategoryList;

@@ -12,6 +12,7 @@
 }
 
 .nav-link {
+  padding: 15px;
   border-radius: 5px;
   width: after;
   transition: background-color 0.2s;
