@@ -11,7 +11,7 @@ function App() {
     setLoading(true);
 
     fetch('/api/categories')
-      .then(response => response.json)
+      .then(response => response.json())
       .then(data => {
         setCategories(data);
         setLoading(false);
