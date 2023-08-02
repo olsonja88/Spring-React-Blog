@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
 
-    fetch('api/categories')
+    fetch('/api/categories')
       .then(response => response.json)
       .then(data => {
         setCategories(data);
