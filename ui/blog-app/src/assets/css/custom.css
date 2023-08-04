@@ -1,0 +1,52 @@
+@charset "UTF-8";
+body {
+  background-color: #333;
+}
+
+.navbar {
+  background-color: #00aeff;
+}
+
+.navbar-brand {
+  font-size: 2em;
+}
+
+.nav-link {
+  padding: 15px;
+  border-radius: 5px;
+  width: after;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: #00aeff;
+}
+
+.nav-link:hover:after {
+  font: bold;
+  content: "   »";
+}
+
+.offcanvas-header {
+  background-color: #00aeff;
+}
+
+.offcanvas-body {
+  background-color: #333;
+}
+
+.btn {
+  background-color: #3d3d3d;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #616161;
+  color: white;
+}
+
+.btn:target {
+  background-color: #00aeff;
+}
+
+/*# sourceMappingURL=custom.css.map */
