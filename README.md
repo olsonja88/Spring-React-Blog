@@ -16,7 +16,10 @@ Built with Spring-Boot, this is an optional final project for my data structures
 4. cd out to base folder and run "mvnw package" to build the projects files.
 5. run "mvnw spring-boot:run", and the front end should open in your browser at localhost:8080/blog-app
 
-## Current State 7/19/23
-Spring backend is setup with CRUD functionality and builds both react apps.
-Blog and Admin frontends are setup.
-Currently working on connecting React Admin to the CRUD functions in the api I've created in Spring Boot.
+## Current State 8/4/23
+Data created in Initializer.java can be fetched and displayed nicely on the frontend.
+
+## Next Steps:
+* Connect Spring Boot API to remote DB to store data permanently
+* Setup React to fetch from remote DB
+* Map all posts from the data table into the Posts component in React
