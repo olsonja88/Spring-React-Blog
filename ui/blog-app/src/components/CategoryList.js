@@ -48,34 +48,30 @@ const CategoryList = () => {
             })}</td>
             <td>
                 <ButtonGroup>
-                    <Link className="btn" size="sm" color="primary" to={"/categories/" + category.id}>Edit</Link>
-                    <Button size="sm" color="danger" onClick={() => remove(category.id)}>Delete</Button>
+                    <Link className="btn text-light" to={"/categories/" + category.id}>Edit</Link>
+                    <Button onClick={() => remove(category.id)}>Delete</Button>
                 </ButtonGroup>
             </td>
         </tr>
     });
 
     return (
-        <div>
+        <div className="main-container">
             <BlogNav/>
-            <Container fluid>
-                <div className="float-end">
-                    <Link className="btn" color="success" to="/categories/new">Add Category</Link>
-                </div>
-                <h3>My Category</h3>
-                <Table className="mt-4">
-                    <thead>
-                    <tr>
-                        <th width="20%">Name</th>
-                        <th>Posts</th>
-                        <th width="10%">Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {categoryList}
-                    </tbody>
-                </Table>
-            </Container>
+            <h4 class="float-start text-light m-3">Categories</h4>
+            <Link className="btn text-light float-end m-3" to="/categories/new">Add Category</Link>
+            <Table className="table-dark">
+                <thead>
+                <tr>
+                    <th width="20%">Name</th>
+                    <th>Posts</th>
+                    <th width="10%">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {categoryList}
+                </tbody>
+            </Table>
         </div>
     );
 };
