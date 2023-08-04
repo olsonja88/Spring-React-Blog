@@ -7,7 +7,7 @@ import Posts from './Posts';
 
 const Home = () => {
     return (
-        <div class="main-container">
+        <div>
             <BlogNav/>
             <Posts/>
         </div>

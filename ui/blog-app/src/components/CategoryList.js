@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import { Button, ButtonGroup, Table } from 'reactstrap';
 import BlogNav from './BlogNav';
 import { Link } from 'react-router-dom';
 
@@ -56,7 +56,7 @@ const CategoryList = () => {
     });
 
     return (
-        <div className="main-container">
+        <div>
             <BlogNav/>
             <h4 class="float-start text-light m-3">Categories</h4>
             <Link className="btn text-light float-end m-3" to="/categories/new">Add Category</Link>
