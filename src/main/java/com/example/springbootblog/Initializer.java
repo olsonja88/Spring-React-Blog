@@ -47,8 +47,7 @@ class Initializer implements CommandLineRunner {
         Category catThree = repository.findByName("Game Development");
         Post postThree = Post.builder().title("Game Testing")
             .content("Game testing is arguably the most important part of game development.  " +
-            "After each new feature is created, it's important to make sure that you get the feel right.  " + 
-            "Another benefit of game testing is finding bugs.  It's important to find as many as you can before release!")
+            "After each new feature is created, it's important to make sure that you get the feel right.")
             .date(Instant.now())
             .build();
         catThree.setPosts(Collections.singleton(postThree));
