@@ -14,25 +14,36 @@ import java.util.stream.Stream;
 @Component
 class Initializer implements CommandLineRunner {
 
+    // Create a category repository that can't be modified after initializing
     private final CategoryRepository repository;
 
+    // Constructor
     public Initializer(CategoryRepository repository) {
         this.repository = repository;
     }
 
     @Override
     public void run(String... strings) {
+
+        // Create a new category for each string in the stream, save each category into the repository
         Stream.of("Web Development", "Mobile Development", "Game Development").forEach(name -> 
         repository.save(new Category(name))
         );
 
+        // Local variable to hold "category one"
         Category catOne = repository.findByName("Web Development");
+
+        // Local variable to hold "post one"
         Post postOne = Post.builder().title("First Time Making a Web App")
             .content("Building a web application is hard, but that doesn't mean you shouldn't try!  " + 
             "In my experience it definitely helps to read a lot of different tutorials, lots of stackoverflow, and be patient.")
             .date(Instant.now())
             .build();
+
+        // Set posts of "category one" to "post one"
         catOne.setPosts(Collections.singleton(postOne));
+
+        // Save "category one" to the repository
         repository.save(catOne);
 
         Category catTwo = repository.findByName("Mobile Development");
@@ -53,6 +64,7 @@ class Initializer implements CommandLineRunner {
         catThree.setPosts(Collections.singleton(postThree));
         repository.save(catThree);
 
+        // Print each category in the terminal
         repository.findAll().forEach(System.out::println);
     }
 }
